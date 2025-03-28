@@ -42,20 +42,12 @@ const upload = multer({
 app.use(
   cors({
     origin: (origin, callback) => {
-      const allowedOrigins = [
-        "http://localhost:3000",
-        "http://localhost:3001",
-        "https://slash-enterprises-frontend.vercel.app/",
-      ];
-      if (!origin || allowedOrigins.includes(origin)) {
-        callback(null, true);
-      } else {
-        callback(new Error("Not allowed by CORS"));
-      }
+      callback(null, true); // Allow all origins dynamically
     },
     credentials: true,
   })
 );
+
 app.use(express.json());
 app.use("/uploads", express.static("uploads"));
 
