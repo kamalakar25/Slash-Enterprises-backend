@@ -45,7 +45,7 @@ app.use(
       const allowedOrigins = [
         "http://localhost:3000",
         "http://localhost:3001",
-        "https://covercraft.vercel.app",
+        "https://slash-enterprises-frontend.vercel.app/",
       ];
       if (!origin || allowedOrigins.includes(origin)) {
         callback(null, true);
